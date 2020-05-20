@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="beltSystem" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.1.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="12" filename="textures/EDGE_Logo.dds"/>
+    <File fileId="13" filename="textures/EDGE_Logo_normal.dds"/>
+    <File fileId="14" filename="textures/EDGE_Logo_specular.dds"/>
+    <File fileId="6" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="15" filename="$data/shared/assets/assetLibraryDecals_diffuse.png"/>
+    <File fileId="16" filename="$data/shared/assets/assetLibraryDecals_normal.png"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+    <File fileId="3" filename="$data/vehicles/grimme/grimmeBelt_diffuse.png"/>
+    <File fileId="4" filename="$data/vehicles/grimme/grimmeBelt_normal.png"/>
+    <File fileId="5" filename="$data/vehicles/grimme/grimmeBelt_specular.png"/>
+    <File fileId="10" filename="$data/vehicles/lizard/beltSystem/beltSystem_normal.png"/>
+    <File fileId="11" filename="$data/vehicles/lizard/beltSystem/beltSystem_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="EDGE_Belt" materialId="4" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="Decals_mat" materialId="5">
+      <Texture fileId="12"/>
+      <Normalmap fileId="13"/>
+      <Glossmap fileId="14"/>
+    </Material>
+    <Material name="beltSystem_mat" materialId="8" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="6" customShaderVariation="colorMask">
+      <Normalmap fileId="10"/>
+      <Glossmap fileId="11"/>
+      <CustomParameter name="RDT" value="1 1 20 20"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="EDGE_Belt_mat" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1">
+      <Normalmap fileId="2"/>
+    </Material>
+    <Material name="grimmeBelt_mat" materialId="6" customShaderId="6" customShaderVariation="uvScroll_colorMask">
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="offsetUV" value="0 0 0 0"/>
+      <CustomParameter name="colorMat0" value="0.02 0.02 0.02 5"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="assetLibraryDecals_mat" materialId="9" customShaderId="6" customShaderVariation="Decal_colorMask">
+      <Texture fileId="15"/>
+      <Normalmap fileId="16"/>
+      <Glossmap fileId="11"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="beltSystem.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape shapeId="1" name="beltSystem_main_component1" dynamic="true" compound="true" collisionMask="8397058" density="0.3" clipDistance="300" nodeId="22" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true">
+      <TransformGroup name="wheels" nodeId="23">
+        <TransformGroup name="wheelRight" translation="-0.718 0.193668 -1.52744" nodeId="24"/>
+        <TransformGroup name="wheelLeft" translation="0.692628 0.193668 -1.52744" nodeId="25"/>
+        <TransformGroup name="wheelFrontRot" translation="-0.0125214 0.122353 0.713568" clipDistance="300" nodeId="26">
+          <TransformGroup name="wheelFront" translation="0.0125214 -0.0426603 0.0684072" nodeId="27"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="frontPart" translation="5.68434e-16 0.102221 2.04906" clipDistance="300" nodeId="28">
+        <TransformGroup name="drawbar_vis" translation="0 1.77636e-17 -0.0020895" clipDistance="300" nodeId="29">
+          <TransformGroup name="attacherJoint" translation="-0.0105672 0.0158196 2.00061" rotation="0 90 0" nodeId="30"/>
+          <Shape shapeId="2" name="col" translation="-5.68434e-16 0.00103641 0.656965" visibility="false" compoundChild="true" collisionMask="8194" density="0.001" nodeId="31" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="camera" nodeId="32">
+        <TransformGroup name="cameraRotationNode" translation="0 0.740227 0" rotation="-25.536 180 0" nodeId="33">
+          <Camera name="camera1" translation="-3.10232 6.0747 -3.57106" rotation="113.072 -31.5588 -162.936" nodeId="34" fov="54.4322" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+        </TransformGroup>
+        <TransformGroup name="raycastNode" translation="0 2.10513 -3.44099" nodeId="35"/>
+      </TransformGroup>
+      <TransformGroup name="exitPoint" translation="1.49304 0 0" nodeId="36"/>
+      <TransformGroup name="belt" nodeId="37">
+        <TransformGroup name="pipeRaycastNode" translation="0 1.70021 -3.24574" nodeId="38"/>
+        <TransformGroup name="pickUpNode" translation="0 -0.146348 2.30607" nodeId="39"/>
+        <TransformGroup name="effects" translation="5.68434e-16 0 2.04906" nodeId="40">
+          <Shape shapeId="3" name="mesh" visibility="false" clipDistance="300" nodeId="41" materialIds="7" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="mesh_target" visibility="false" clipDistance="300" nodeId="42" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <Shape shapeId="5" name="pipeEffect" translation="-0.000184023 1.46572 -5.08389" rotation="90 180 0" visibility="false" clipDistance="100" nodeId="43" materialIds="7" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <Shape shapeId="6" name="belt_vis" translation="-0.00967669 0.819673 -0.626425" clipDistance="300" nodeId="44" materialIds="6" castsShadows="true" receiveShadows="true"/>
+        <TransformGroup name="tipOcclusionArea" nodeId="45">
+          <TransformGroup name="start" translation="0.883041 0 -2.43341" nodeId="46"/>
+          <TransformGroup name="width" translation="-0.883 0 -2.43341" nodeId="47"/>
+          <TransformGroup name="height" translation="0.883041 0 0.10573" nodeId="48"/>
+        </TransformGroup>
+        <Shape shapeId="7" name="trailerTrigger" translation="0 0.368098 -3.56123" kinematic="true" compound="true" trigger="true" collisionMask="8388608" nodeId="49" materialIds="4" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="bunkerSiloOpenNode" translation="0 -0.146348 15" nodeId="50"/>
+      </TransformGroup>
+      <Shape shapeId="8" name="beltSystem_vis" clipDistance="300" nodeId="51" materialIds="8" castsShadows="true" receiveShadows="true" skinBindNodeIds="51 26 28 29 53">
+        <Shape shapeId="9" name="Sign" translation="-0.537581 1.40975 -2.65724" rotation="90 -75 -90" scale="0.7 0.7 1" clipDistance="300" nodeId="57" materialIds="5" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="9" name="Sign" translation="0.509562 0.283715 1.54519" rotation="90 -75 -90" scale="0.7 0.7 1" clipDistance="300" nodeId="59" materialIds="5" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+      <TransformGroup name="attacherBarJoint" translation="-0.0132355 1.75648 -2.74785" nodeId="52">
+        <TransformGroup name="attacherBar" clipDistance="300" nodeId="53">
+          <TransformGroup name="attacherJointX" translation="0 0 -0.695931" rotation="0 -90 0" nodeId="54"/>
+          <Shape shapeId="10" name="screwDecals" translation="0.000713625 0.00096199 -0.493007" clipDistance="30" nodeId="55" materialIds="9" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Shape shapeId="11" name="screwDecals01" translation="-0.013293 0.910987 -0.471019" clipDistance="30" nodeId="56" materialIds="9" castsShadows="true" receiveShadows="true" decalLayer="1"/>
+    </Shape>
+  </Scene>
+
+</i3D>
